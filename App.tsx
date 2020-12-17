@@ -1,24 +1,29 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { View, Text } from 'react-native';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+import 'react-native-gesture-handler';
 
-import useCachedResources from './src/hooks/useCachedResources';
-// import Navigation from './src/navigation';
+import React from 'react';
+import { StatusBar } from 'expo-status-bar';
+import { NavigationContainer } from '@react-navigation/native';
+import styled from 'styled-components/native';
+
+import AppProvider from './src/hooks';
+
+import Routes from './src/routes';
+
+const AppContainer = styled.View`
+  flex: 1;
+  background-color: #232f34;
+`;
 
 const App: React.FC = () => {
-  const isLoadingComplete = useCachedResources();
-
-  if (!isLoadingComplete) {
-    return null;
-  }
   return (
-    <SafeAreaProvider>
-      <View>
-        <Text>Olá mundo</Text>
-      </View>
-      <StatusBar />
-    </SafeAreaProvider>
+    <NavigationContainer>
+      <StatusBar backgroundColor="#232F34" translucent />
+      <AppProvider>
+        <AppContainer>
+          <Routes />
+        </AppContainer>
+      </AppProvider>
+    </NavigationContainer>
   );
 };
 

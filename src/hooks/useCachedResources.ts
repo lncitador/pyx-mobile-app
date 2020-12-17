@@ -1,9 +1,12 @@
-import { Ionicons } from '@expo/vector-icons';
+/* eslint-disable no-console */
+import { Feather, MaterialIcons } from '@expo/vector-icons';
 import * as Font from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import * as React from 'react';
+import RobotoMedium from '../../assets/fonts/Roboto-Medium.ttf';
+import RobotoRegular from '../../assets/fonts/Roboto-Regular.ttf';
 
-export default function useCachedResources() {
+const useCachedResources: React.ComponentState = () => {
   const [isLoadingComplete, setLoadingComplete] = React.useState(false);
 
   // Load any resources or data that we need prior to rendering the app
@@ -14,8 +17,10 @@ export default function useCachedResources() {
 
         // Load fonts
         await Font.loadAsync({
-          ...Ionicons.font,
-          'roboto-medium': require('../../assets/fonts/Roboto-Medium.ttf'),
+          ...Feather.font,
+          ...MaterialIcons.font,
+          'Roboto-Medium': RobotoMedium,
+          'Roboto-Regular': RobotoRegular,
         });
       } catch (e) {
         // We might want to provide this error information to an error reporting service
@@ -30,4 +35,6 @@ export default function useCachedResources() {
   }, []);
 
   return isLoadingComplete;
-}
+};
+
+export default useCachedResources;
