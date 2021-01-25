@@ -57,11 +57,11 @@ export interface VehicleData {
 }
 
 export const pyxapi = axios.create({
-  baseURL: 'http://3.92.227.172:3434',
+  baseURL: 'http://10.0.3.2:3434',
 });
 
 export const mobile = axios.create({
-  baseURL: 'http://3.92.197.58:3435',
+  baseURL: 'http://10.0.3.2:3435',
 });
 
 export const receitaws = axios.create({
