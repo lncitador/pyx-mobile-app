@@ -14,7 +14,7 @@ import { Form } from '@unform/mobile';
 import { FormHandles } from '@unform/core';
 import * as Yup from 'yup';
 
-import { Container, ForgotPassword, ForgotPasswordtext } from './styles';
+import { Container } from './styles';
 
 import getValidationErrors from '../../../utils/getValidationError';
 
@@ -72,7 +72,7 @@ const SingIn: React.FC = () => {
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
         enabled>
         <ScrollView
-          contentContainerStyle={{ flex: 1 }}
+          contentContainerStyle={{ flex: 1, paddingHorizontal: 20 }}
           keyboardShouldPersistTaps="handled">
           <Container>
             <Image style={{ marginBottom: 50 }} source={imgPng} />
@@ -107,10 +107,6 @@ const SingIn: React.FC = () => {
                 Entrar
               </Button>
             </Form>
-
-            <ForgotPassword>
-              <ForgotPasswordtext>Esqueci minha senha</ForgotPasswordtext>
-            </ForgotPassword>
           </Container>
         </ScrollView>
       </KeyboardAvoidingView>

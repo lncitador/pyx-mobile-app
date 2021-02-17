@@ -17,7 +17,7 @@ const AppContainer = styled.View`
 const App: React.FC = () => {
   return (
     <NavigationContainer>
-      <StatusBar backgroundColor="#232F34" style={'light'}/>
+      <StatusBar backgroundColor="#232F34" style={'light'} />
       <AppProvider>
         <AppContainer>
           <Routes />

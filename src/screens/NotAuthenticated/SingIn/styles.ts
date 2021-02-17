@@ -6,20 +6,3 @@ export const Container = styled.SafeAreaView`
   justify-content: center;
   padding: 0 30px;
 `;
-
-export const Title = styled.Text`
-  font-size: 16px;
-  color: #9bb5c0;
-  font-family: 'Roboto-Regular';
-  margin: 64px 0 24px;
-`;
-
-export const ForgotPassword = styled.TouchableOpacity`
-  margin-top: 24px;
-`;
-
-export const ForgotPasswordtext = styled.Text`
-  color: #9bb5c0;
-  font-size: 16px;
-  font-family: 'Roboto-Regular';
-`;
